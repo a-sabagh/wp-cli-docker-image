@@ -14,4 +14,8 @@ LABEL maintainer="info@asabagh.ir"
 
 COPY --from=builder /tmp/wp-cli.phar /usr/local/bin/wp
 
+RUN chmod +x /usr/local/bin/wp
+
+RUN apt update && apt install less && rm -rf /var/lib/apt/lists/*
+
 RUN wp --info
