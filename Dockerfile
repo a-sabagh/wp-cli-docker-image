@@ -19,3 +19,5 @@ RUN chmod +x /usr/local/bin/wp
 RUN apt update && apt install less && rm -rf /var/lib/apt/lists/*
 
 RUN wp --info
+
+USER www-data
